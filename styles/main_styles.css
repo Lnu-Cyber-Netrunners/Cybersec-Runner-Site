@@ -149,19 +149,19 @@ body {
     left: 5%;
     transform: translate(0, -50%);
     color: white;
-    font-size: 60px;
+    font-size: 56px;
     font-weight: bold;
 }
 
 @media screen and (max-width: 1024px) {
     .text-overlay {
-        font-size: 48px;
+        font-size: 38px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .text-overlay {
-        font-size: 32px;
+        font-size: 28px;
         left: 5%;
     }
 }
