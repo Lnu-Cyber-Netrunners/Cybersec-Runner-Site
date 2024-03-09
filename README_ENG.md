@@ -24,7 +24,7 @@
 + JS
   
 ## :paperclip: How to use:
-It is very simple, you need to follow the link we provide
+It is very simple, you need to follow the link we provide https://lnu-cyber-netrunners.github.io/Cybersec-Runner-Site/
 
 ## Team:
 + Marta Mysyshyn - Team Lead and Developer
