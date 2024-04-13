@@ -189,7 +189,7 @@ hr {
     margin-bottom: 25px;
 }
 
-.registerbtn {
+.loginbtn {
     background-color: #1348c3;
     color: white;
     padding: 16px 20px;
@@ -201,7 +201,7 @@ hr {
     opacity: 0.9;
 }
   
-.registerbtn:hover {
+.loginbtn:hover {
     opacity: 1;
 }
   

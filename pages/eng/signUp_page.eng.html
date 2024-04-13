@@ -15,14 +15,14 @@
                   <span></span>
                 </label>
                 <ul class="menu__box">
-                  <li><a class="menu__item" href="../../index.html">Головна</a></li>
-                  <li><a class="menu__item" href="../../pages/ukr/page2.html">Теорія та тести</a></li>
-                  <li><a class="menu__item" href="../../pages/ukr/vm_page.html">Віртуальна машина</a></li>
+                    <li><a class="menu__item" href="../../pages/eng/MainPage.eng.html">Main</a></li>
+                    <li><a class="menu__item" href="../../pages/eng/page2.eng.html">Theory and tests</a></li>
+                    <li><a class="menu__item" href="#">Virtual machine</a></li>
                 </ul>
             </div>
             <div class="lang">
-                <a href="#" class="link active">UA</a>
-                <a href="../../pages/eng/signUp_page.eng.html" class="link">ENG</a>
+                <a href="../../pages/ukr/signUp_page.html" class="link">UA</a>
+                <a href="#" class="link active">ENG</a>
             </div>
         </div>
     </div>
@@ -31,42 +31,41 @@
     <div class="main">
         <div class="row"> <form action="/action_page.php">
             <div class="container">
-              <h1>РЕЄСТРАЦІЯ</h1>
-              <p>Заповніть, будь ласка, ці форми, щоб створити акаунт.</p>
+              <h1>SIGN UP</h1>
+              <p>Please, fill out these forms to create an account.</p>
               <hr>
           
-              <label for="email"><b>Пошта</b></label>
-              <input type="text" placeholder="Введіть пошту " name="email" id="email" required>
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter email" name="email" id="email" required>
           
-              <label for="psw"><b>Пароль</b></label>
-              <input type="password" placeholder="Введіть пароль" name="psw" id="psw" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter password" name="psw" id="psw" required>
           
-              <label for="psw-repeat"><b>Повторіть пароль</b></label>
-              <input type="password" placeholder="Введіть пароль ще раз" name="psw-repeat" id="psw-repeat" required>
+              <label for="psw-repeat"><b>Repeat password</b></label>
+              <input type="password" placeholder="Enter password again" name="psw-repeat" id="psw-repeat" required>
               <hr>
-              <button type="submit" class="registerbtn">Зареєструватись</button>
+              <button type="submit" class="registerbtn">Sign Up</button>
             </div>
             
             <div class="container signin">
-              <p>Вже маєте акаунт? <a href="../../pages/ukr/signIn_page.html">Увійти</a>.</p>
+              <p>Already have an account? <a href="../../pages/eng/signIn_page.eng.html">Sign In</a>.</p>
             </div>
           </form>
         </div>
     </div>
 
-    <div class="footer"> 
-        <div class="text">Наші контакти:</div>
+    <div class="footer">
+        <div class="text">Our contacs:</div>
         <div class="text">Email: nazarcherneha05@gmail.com</div>
-        <div class="text">Номер телефону: 098-643-17</div>
+        <div class="text">Phone number: 098-643-17</div>
     </div>
 </body>
 
 <script type="module">
-
+ 
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
   import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
   import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-
 
   const firebaseConfig = {
     apiKey: "AIzaSyDxOpwVawjWr8F8I2xl4Wm_Hpe0YN9rX9c",
@@ -100,22 +99,22 @@
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-
+                
                 const user = userCredential.user;
 
                 set(ref(database, 'users/' + user.uid), {
-                  email: email
-              })
+                    email: email
+                })
 
                 alert('User created!');
 
-                window.location.href = "../../index.html";
-
+                window.location.href = "../../pages/eng/MainPage.eng.html";
+               
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 alert(errorMessage);
-
+                
             });
     });
 });

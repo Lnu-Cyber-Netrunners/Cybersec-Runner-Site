@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/signUp_styles.css">
+    <link rel="stylesheet" href="../../styles/signIn_styles.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             </div>
             <div class="lang">
                 <a href="#" class="link active">UA</a>
-                <a href="../../pages/eng/signUp_page.eng.html" class="link">ENG</a>
+                <a href="../../pages/eng/signIn_page.eng.html" class="link">ENG</a>
             </div>
         </div>
     </div>
@@ -31,8 +31,8 @@
     <div class="main">
         <div class="row"> <form action="/action_page.php">
             <div class="container">
-              <h1>РЕЄСТРАЦІЯ</h1>
-              <p>Заповніть, будь ласка, ці форми, щоб створити акаунт.</p>
+              <h1>ВХІД</h1>
+              <p>Заповніть, будь ласка, ці форми, щоб увійти.</p>
               <hr>
           
               <label for="email"><b>Пошта</b></label>
@@ -41,14 +41,12 @@
               <label for="psw"><b>Пароль</b></label>
               <input type="password" placeholder="Введіть пароль" name="psw" id="psw" required>
           
-              <label for="psw-repeat"><b>Повторіть пароль</b></label>
-              <input type="password" placeholder="Введіть пароль ще раз" name="psw-repeat" id="psw-repeat" required>
               <hr>
-              <button type="submit" class="registerbtn">Зареєструватись</button>
+              <button type="submit" class="loginbtn">Увійти</button>
             </div>
             
             <div class="container signin">
-              <p>Вже маєте акаунт? <a href="../../pages/ukr/signIn_page.html">Увійти</a>.</p>
+              <p>Ще не маєте акаунта? <a href="../../pages/ukr/signUp_page.html">Зареєструватись</a>.</p>
             </div>
           </form>
         </div>
@@ -62,11 +60,10 @@
 </body>
 
 <script type="module">
-
+ 
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
-  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-
+  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyDxOpwVawjWr8F8I2xl4Wm_Hpe0YN9rX9c",
@@ -93,33 +90,72 @@
         var password = document.getElementById('psw').value;
         var repeatPassword = document.getElementById('psw-repeat').value;
 
-        if (password !== repeatPassword) {
-            alert('Passwords do not match');
-            return;
-        }
-
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-
+                
                 const user = userCredential.user;
 
                 set(ref(database, 'users/' + user.uid), {
-                  email: email
-              })
+                    email: email
+                })
 
                 alert('User created!');
-
-                window.location.href = "../../index.html";
-
+               
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 alert(errorMessage);
-
+                
             });
     });
 });
 
+  document.addEventListener('DOMContentLoaded', () => {
+      const signInButton = document.querySelector('.loginbtn');
+      signInButton.addEventListener('click', (e) => {
+          e.preventDefault();
+
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('psw').value;
+
+              signInWithEmailAndPassword(auth, email, password)
+              .then((userCredential) => {
+
+                  const user = userCredential.user;
+
+                  const dt = new Date();
+                  update(ref(database, 'users/' + user.uid), {
+                      last_login: dt
+                  })
+
+                  alert('User logged in!');
+
+                  window.location.href = "../../index.html";
+      
+              })
+              .catch((error) => {
+                  const errorCode = error.code;
+                  const errorMessage = error.message;
+
+                  alert(errorMessage);
+              });
+          });
+  });
+
+  const user = auth.currentUser;
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const uid = user.uid;
+
+        } else {
+
+        }
+      });
+
+
+
+  
   
 </script>
+
 </html>
