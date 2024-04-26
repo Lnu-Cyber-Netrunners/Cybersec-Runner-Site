@@ -40,10 +40,13 @@
           
               <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Введіть пароль" name="psw" id="psw" required>
+              <div class="forgotpasswordbtn-container">
+                <button class="forgotpasswordbtn">Forgot password?</button>
+            </div>
           
               <hr>
               <button type="submit" class="loginbtn">Sign In</button>
-            </div>
+          </div>
             
             <div class="container signin">
               <p>Don't have an account yet? <a href="../../pages/eng/signUp_page.eng.html">Sign Up</a>.</p>
@@ -51,19 +54,13 @@
           </form>
         </div>
     </div>
-
-    <div class="footer">
-        <div class="text">Our contacs:</div>
-        <div class="text">Email: nazarcherneha05@gmail.com</div>
-        <div class="text">Phone number: 098-643-17</div>
-    </div>
 </body>
 
 <script type="module">
  
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
     import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
   
     const firebaseConfig = {
       apiKey: "AIzaSyDxOpwVawjWr8F8I2xl4Wm_Hpe0YN9rX9c",
@@ -129,6 +126,8 @@
                     })
 
                     alert('User logged in!');
+
+                    window.location.href = "../../pages/eng/MainPage.eng.html";
         
                 })
                 .catch((error) => {
@@ -137,7 +136,6 @@
 
                     alert(errorMessage);
 
-                    window.location.href = "../../pages/eng/MainPage.eng.html";
                 });
             });
     });
@@ -151,6 +149,28 @@
 
         }
       });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const forgotPasswordButton = document.querySelector('.forgotpasswordbtn');
+        forgotPasswordButton.addEventListener('click', (e) => {
+            e.preventDefault();
+  
+        var email = document.getElementById('email').value;
+
+        sendPasswordResetEmail(auth, email)
+        .then(()=>{
+          alert("A Password Reset Link has been sent to your email");
+        })
+
+        .catch((error)=>{
+          console.log(error.code);
+          console.log(error.message);
+        })
+  
+              
+                
+            });
+    });
 
     
     

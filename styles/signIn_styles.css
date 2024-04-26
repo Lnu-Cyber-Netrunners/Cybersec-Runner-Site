@@ -208,6 +208,21 @@ hr {
   a {
     color: dodgerblue;
 }
+
+/* .forgotpasswordbtn-container {
+  display: flex;
+  justify-content: left;
+} */
+
+.forgotpasswordbtn{
+    text-align: left;
+    background-color: #ffffff;
+    color: rgb(5, 5, 5);
+    border: none;
+    cursor: pointer;
+    width: 25%; 
+    opacity: 0.9;
+}
   
 
 .signin {
