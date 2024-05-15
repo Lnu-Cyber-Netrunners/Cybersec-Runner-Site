@@ -19,7 +19,13 @@
                     <li><a class="menu__item" href="../../pages/eng/MainPage.eng.html">Main</a></li>
                     <li><a class="menu__item" href="../../pages/eng/page2.eng.html">Theory and tests</a></li>
                     <li><a class="menu__item" href="#">Virtual machine</a></li>
+                    <li><a class="menu__item" href="/pages/eng/results.eng.html">For User</a></li>
                 </ul>
+            </div>
+            <div class="button_wrap1">    
+                <a class="button unauthorized" href="/pages/eng/signUp_page.eng.html">Sign Up</a>
+                <a class="button unauthorized" href="/pages/eng/signIn_page.eng.html">Log In</a>
+                <a class="button authorized" id="sign-out" href="">Log Out</a>
             </div>
             <div class="lang">
                 <a href="../../pages/ukr/test2.html" class="link">UA</a>
@@ -120,7 +126,7 @@
                     </div>
 
                     <br><br>
-                    <input type="button" value="Перевірити відповіді" onclick="checkAnswers()">
+                    <input id="check-results" data-testid="2" type="button" value="Перевірити відповіді" onclick="checkAnswers()">
                 </form>
 
                 <div id="resultMessage"></div>
@@ -147,32 +153,9 @@
         <div class="text">Phone number: 098-643-17</div>
     </div>
 
-    <script>
-        function checkAnswers() {
-            const totalQuestions = 5;
-
-            let correctAnswers = 0;
-
-            for (let i = 1; i <= totalQuestions; i++) {
-                const selectedAnswer = document.querySelector('input[name="q' + i + '"]:checked');
-
-                if (selectedAnswer) {
-                    const correctOption = 'a';
-
-                    if (selectedAnswer.value === correctOption) {
-                        correctAnswers++;
-                        selectedAnswer.parentElement.classList.add('correct');
-                        selectedAnswer.parentElement.classList.remove('incorrect');
-                    } else {
-                        selectedAnswer.parentElement.classList.add('incorrect');
-                        selectedAnswer.parentElement.classList.remove('correct');
-                    }
-                }
-            }
-
-            const resultMessage = `You have answered ${correctAnswers} of the  ${totalQuestions} questions correctly.`;
-            document.getElementById('resultMessage').innerHTML = resultMessage;
-        }</script>
+    <script src="/js/connection.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/tests.js"></script>
 
 </body>
 </html>

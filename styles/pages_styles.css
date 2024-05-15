@@ -107,6 +107,29 @@ body{
   transition-duration: .25s;
 }
 
+.button_wrap1 {
+    margin: 2px 0;
+    width: 92%;
+}
+
+.button_wrap1 .button {
+    background-color: rgb(4, 4, 4);
+    border-radius: 6px;
+    float: right; 
+    color: white;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 8px 15px;
+    text-decoration: none;
+    border: 1px solid rgb(0, 0, 0);
+    transition: all .4s;
+}
+
+.button_wrap1 .button:hover {
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+
 .nav_icon .line.middle{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -346,4 +369,8 @@ body{
 
 .text:first-child{
     margin-top: 0;
+}
+
+.hidden {
+    display: none;
 }

@@ -336,3 +336,6 @@ body {
 
 
 
+.hidden {
+    display: none;
+}

@@ -18,8 +18,15 @@
                 <ul class="menu__box">
                   <li><a class="menu__item" href="../../index.html">Головна</a></li>
                   <li><a class="menu__item" href="../../page2.html">Теорія та тести</a></li>
-                  <li><a class="menu__item" href="../../pages/ukr/vm_page.html">Віртуальна машина</a></li>                </ul>
-              </div>
+                  <li><a class="menu__item" href="../../pages/ukr/vm_page.html">Віртуальна машина</a></li>                
+                  <li><a class="menu__item" href="./pages/ukr/results.html">Для користувача</a></li>
+                </ul>
+            </div>
+            <div class="button_wrap1">    
+                <a class="button unauthorized" href="/pages/ukr/signUp_page.html">Зареєструватись</a>
+                <a class="button unauthorized" href="/pages/ukr/signIn_page.html">Увійти</a>
+                <a class="button authorized" id="sign-out" href="">Вийти</a>
+            </div>
             <div class="lang">
                 <a href="#" class="link active">UA</a>
                 <a href="../../pages/eng/test1.eng.html" class="link">ENG</a>
@@ -119,7 +126,7 @@
                     </div>
 
                     <br><br>
-                    <input type="button" value="Перевірити відповіді" onclick="checkAnswers()">
+                    <input id="check-results" data-testid="1" type="button" value="Перевірити відповіді">
                 </form>
 
                 <div id="resultMessage"></div>
@@ -143,33 +150,9 @@
         <div class="text">Номер телефону: 098-643-17</div>
     </div>
 
-    <script>
-        function checkAnswers() {
-            const totalQuestions = 5;
-
-            let correctAnswers = 0;
-
-            for (let i = 1; i <= totalQuestions; i++) {
-                const selectedAnswer = document.querySelector('input[name="q' + i + '"]:checked');
-
-                if (selectedAnswer) {
-                    const correctOption = 'a';
-
-                    if (selectedAnswer.value === correctOption) {
-                        correctAnswers++;
-                        selectedAnswer.parentElement.classList.add('correct');
-                        selectedAnswer.parentElement.classList.remove('incorrect');
-                    } else {
-                        selectedAnswer.parentElement.classList.add('incorrect');
-                        selectedAnswer.parentElement.classList.remove('correct');
-                    }
-                }
-            }
-
-            const resultMessage = `Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань.`;
-            document.getElementById('resultMessage').innerHTML = resultMessage;
-        }
-    </script>
+    <script src="/js/connection.js"></script>
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/tests.js"></script>
 
 </body>
 </html>
