@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Головна</title>
-    <link rel="stylesheet" href="./styles/main_styles.css">
+    <link rel="stylesheet" href="/styles/tests_styles.css">
 </head>
 
 <body>
@@ -17,11 +17,11 @@
                 </label>
                 <ul class="menu__box">
                   <li><a class="menu__item" href="#">Головна</a></li>
-                  <li><a class="menu__item" href="./pages/ukr/page2.html">Теорія та тести</a></li>
-                  <li><a class="menu__item" href="./pages/ukr/vm_page.html">Віртуальна машина</a></li>
+                  <li><a class="menu__item" href="/pages/ukr/page2.html">Теорія та тести</a></li>
+                  <li><a class="menu__item" href="/pages/ukr/vm_page.html">Віртуальна машина</a></li>
                   <li><a class="menu__item" href="./pages/ukr/results.html">Для користувача</a></li>
                 </ul>
-              </div>
+            </div>
             <div class="button_wrap1">    
                 <a class="button unauthorized" href="/pages/ukr/signUp_page.html">Зареєструватись</a>
                 <a class="button unauthorized" href="/pages/ukr/signIn_page.html">Увійти</a>
@@ -29,29 +29,27 @@
             </div>
             <div class="lang">
                 <a href="#" class="link active">UA</a>
-                <a href="./pages/eng/MainPage.eng.html" class="link">ENG</a>
+                <a href="/pages/eng/results.eng.html" class="link">ENG</a>
             </div>
         </div>
     </div>
 
     <div class="main">
         <div class="imgbox">
-            <img src="./sources/images/banner.jpg">
-            <div class="text-overlay">ПОЧИНАЙ<br>СЬОГОДНІ!</div>
+            <img src="../../sources/images/banner.jpg">
+            <div class="text-overlay">Результати</div>
         </div>
 
         <div class="row">
-            <div class="left_side">
-                <img src="./sources/images/tests_image.jpg">
+            <div class="results">
+                <ul>
+                    <li><span>Тест 1. Вступний - </span> <span id="test1" class="result">0</span></li>
+                    <li><span>Тест 2. Кіберзагрози - </span><span id="test2" class="result">0</span></li>
+                    <li><span>Тест 3. Шифрування в кібербезпеці - </span><span id="test3" class="result">0</span></li>
+                    <li><span>Тест 4. Зберігання даних - </span><span id="test4" class="result">0</span></li>
+                    <li><span>Тест 5. Захист інформації - </span><span id="test5" class="result">0</span></li>
+                </ul>
             </div>
-            <div class="right_side">
-                <h1 class="title">Починай свій шлях сьогодні!</h1>
-                <p class="p0"> За допомогою нашого сайту ви зможете легко вивчати теорію, а також проходити цікаві тести та практичні кейси! </p>
-            </div>
-        </div>
-        
-        <div class="button_wrap">
-            <a href="./pages/ukr/page2.html" class="button">Перейти до теорії</a>
         </div>
     </div>
 
@@ -60,8 +58,8 @@
         <div class="text">Email: nazarcherneha05@gmail.com</div>
         <div class="text">Номер телефону: 098-643-17</div>
     </div>
-    
-    <script src="/js/connection.js"></script>
-    <script type="module" src="/js/auth.js"></script>
 </body>
+<script type="module" src="/js/connection.js" ></script>
+<script type="module" src="/js/auth.js" ></script>
+<script type="module" src="/js/results.js" ></script>
 </html>

@@ -18,6 +18,7 @@
                   <li><a class="menu__item" href="../../index.html">Головна</a></li>
                   <li><a class="menu__item" href="../../pages/ukr/page2.html">Теорія та тести</a></li>
                   <li><a class="menu__item" href="../../pages/ukr/vm_page.html">Віртуальна машина</a></li>
+                  <li><a class="menu__item" href="./pages/ukr/results.html">Для користувача</a></li>
                 </ul>
             </div>
             <div class="lang">
@@ -29,7 +30,7 @@
 
 
     <div class="main">
-        <div class="row"> <form action="/action_page.php">
+        <div class="row"> <form>
             <div class="container">
               <h1>ВХІД</h1>
               <p>Заповніть, будь ласка, ці форми, щоб увійти.</p>
@@ -57,124 +58,7 @@
     </div>
 </body>
 
-<script type="module">
- 
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyDxOpwVawjWr8F8I2xl4Wm_Hpe0YN9rX9c",
-    authDomain: "authentication-app-41a36.firebaseapp.com",
-    databaseURL: "https://authentication-app-41a36-default-rtdb.firebaseio.com",
-    projectId: "authentication-app-41a36",
-    storageBucket: "authentication-app-41a36.appspot.com",
-    messagingSenderId: "608523376965",
-    appId: "1:608523376965:web:afc20b2c57c31c79cd462c"
-  };
-
-
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
-  const auth = getAuth();
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const signUpButton = document.querySelector('.registerbtn');
-
-    signUpButton.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('psw').value;
-        var repeatPassword = document.getElementById('psw-repeat').value;
-        
-
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                
-                const user = userCredential.user;
-
-                set(ref(database, 'users/' + user.uid), {
-                    email: email
-                })
-
-                alert('User created!');
-               
-            })
-            .catch((error) => {
-                const errorMessage = error.message;
-                alert(errorMessage);
-                
-            });
-    });
-});
-
-  document.addEventListener('DOMContentLoaded', () => {
-      const signInButton = document.querySelector('.loginbtn');
-      signInButton.addEventListener('click', (e) => {
-          e.preventDefault();
-
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('psw').value;
-
-              signInWithEmailAndPassword(auth, email, password)
-              .then((userCredential) => {
-
-                  const user = userCredential.user;
-
-                  const dt = new Date();
-                  update(ref(database, 'users/' + user.uid), {
-                      last_login: dt
-                  })
-
-                  alert('User logged in!');
-
-                  window.location.href = "../../index.html";
-      
-              })
-              .catch((error) => {
-                  const errorCode = error.code;
-                  const errorMessage = error.message;
-
-                  alert(errorMessage);
-              });
-          });
-  });
-
-  const user = auth.currentUser;
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-          const uid = user.uid;
-
-        } else {
-
-        }
-      });
-
-
-      document.addEventListener('DOMContentLoaded', () => {
-        const forgotPasswordButton = document.querySelector('.forgotpasswordbtn');
-        forgotPasswordButton.addEventListener('click', (e) => {
-            e.preventDefault();
-  
-        var email = document.getElementById('email').value;
-
-        sendPasswordResetEmail(auth, email)
-        .then(()=>{
-          alert("Посилання для зміни пароля було надіслано на вашу електронну пошту");
-        })
-
-        .catch((error)=>{
-          console.log(error.code);
-          console.log(error.message);
-        })
-  
-              
-                
-            });
-    });
-  
-  
-</script>
+<script type="module" src="/js/connection.js" ></script>
+<script type="module" src="/js/singn_in.js" ></script>
 
 </html>
