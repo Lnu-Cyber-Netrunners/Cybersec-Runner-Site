@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 alert('User created!');
 
-                window.location.href = "/index.html";
+                window.location.href = "../../index.html";
 
             })
             .catch((error) => {

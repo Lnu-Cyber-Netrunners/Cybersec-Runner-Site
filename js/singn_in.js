@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 alert('User logged in!');
 
-                window.location.href = "/index.html";
+                window.location.href = "../../index.html";
 
             })
             .catch((error) => {

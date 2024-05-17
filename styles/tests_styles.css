@@ -360,3 +360,92 @@
 .hidden {
     display: none;
 }
+
+.test-results-header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.test-results-header .column-name{
+    width: calc(33.3% - 20px);
+    margin: 0 10px;
+}
+
+.test-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+}
+
+.test-list li{
+    display: flex;
+    padding: 20px 10px;
+    border-bottom: 1px solid #e3eaf0;
+}
+
+.test-list li .test-name{
+    width: 250px;
+}
+
+.test-list li .result{
+    width: 40px;
+    text-align: center;
+}
+
+.test-list li .test-name,
+.test-list li .result,
+.test-list li .test-link{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.test-list .test-link{
+    width: 200px;
+    padding-left: 20px;
+    color: #073272;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.test-list .arrow{
+    position: relative;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    width: 16px;
+    height: 12px;
+    transition: 0.3s linear;
+}
+
+.test-list .arrow svg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    transform: rotate(180deg);
+}
+
+.test-list .arrow svg path{
+    stroke: #073272;
+}
+
+.test-list .arrow::before{
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 100%;
+    background-color: #073272;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    transform: none;
+}
+
+.test-list .test-link:hover .arrow{
+    width: 24px;
+}

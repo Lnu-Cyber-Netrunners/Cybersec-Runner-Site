@@ -20,7 +20,7 @@ async function GetResults(userID) {
         querySnapshot.forEach((doc) => {
             const tResult = doc.data();
             if (!results[tResult.testId]) {
-                results[tResult.testId] = tResult;
+                    results[tResult.testId] = tResult;
             } else {
                 if (results[tResult.testId].date < tResult.date) {
                     results[tResult.testId] = tResult;
