@@ -361,54 +361,64 @@
     display: none;
 }
 
-.test-results-header{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 22px;
-}
-
-.test-results-header .column-name{
-    width: calc(33.3% - 20px);
-    margin: 0 10px;
+.row.results-row{
+    max-width: 1024px;
+    border-radius: 0;
+    border: none;
+    margin: 100px auto;
+    padding: 0 20px;
 }
 
 .test-list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     list-style: none;
-    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0;
 }
 
 .test-list li{
-    display: flex;
-    padding: 20px 10px;
-    border-bottom: 1px solid #e3eaf0;
+    overflow: hidden;
+    display: block;
+    width: calc(33.33% - 100px);
+    padding: 40px;
+    border-radius: 16px;
+    background-color: #F6F8FA;
+}
+
+@media (max-width: 992px) {
+    .test-list li {
+      width: calc(50% - 100px);
+    }
+}
+
+@media (max-width: 600px) {
+    .test-list li {
+      width: 100%;
+    }
 }
 
 .test-list li .test-name{
-    width: 250px;
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1b242b;
+}
+
+.test-list li .result-wrapper {
+    display: block;
+    margin-top: 10px;
 }
 
 .test-list li .result{
-    width: 40px;
-    text-align: center;
-}
-
-.test-list li .test-name,
-.test-list li .result,
-.test-list li .test-link{
-    display: inline-block;
-    margin: 0 10px;
+    color: #1b242b;
 }
 
 .test-list .test-link{
+    display: inline-block;
     width: 200px;
-    padding-left: 20px;
-    color: #073272;
+    margin-top: 10px;
+    color: #007BFF;
     font-weight: 600;
     text-decoration: none;
 }
@@ -431,7 +441,7 @@
 }
 
 .test-list .arrow svg path{
-    stroke: #073272;
+    stroke: #007BFF;
 }
 
 .test-list .arrow::before{
@@ -439,7 +449,7 @@
     display: inline-block;
     height: 2px;
     width: 100%;
-    background-color: #073272;
+    background-color: #007BFF;
     position: absolute;
     top: 6px;
     left: 0;
