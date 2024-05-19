@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/tests_styles.css">
 </head>
 
@@ -19,7 +22,7 @@
                     <li><a class="menu__item" href="../../pages/eng/MainPage.eng.html">Main</a></li>
                     <li><a class="menu__item" href="../../pages/eng/page2.eng.html">Theory and tests</a></li>
                     <li><a class="menu__item" href="#">Virtual machine</a></li>
-                    <li><a class="menu__item" href="../../pages/eng/results.eng.html">For User</a></li>
+                    <li><a class="menu__item" id="menu__item-results" href="../../pages/eng/results.eng.html">For User</a></li>
                 </ul>
             </div>
             <div class="button_wrap1">    
@@ -40,98 +43,100 @@
             <div class="text-overlay">Test 5</div>
         </div>
 
-        <div class="row">
-            <h1 class="title">Test 5. Protecting information</h1>
-            <div id="quizContainer">
-
-                <form id="quizForm">
-                    <div class="question">
-                        <p><b>1.</b> What are the main types of information defined by their legal regime in the text?</p>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Trade secrets
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="a"> Confidential information and sensitive information
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Public information and commercial information
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Proprietary information and professional secrets
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>2.</b> What security services do cybersecurity vendors provide?</p>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Sale of computers
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="a"> Protection against malware
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Software production
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Computer repair
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>3.</b> What an identity and access management system includes (IAM)?</p>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Identity synchronisation
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Resource management
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Tracking network traffic
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="a"> All answers are correct
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>4.</b> What is the function of a firewall in cybersecurity?</p>
-                        <label>
-                            <input type="radio" name="q4" value="b"> Data encryption protection
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="a"> Monitoring network traffic
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="b"> Identity management
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="b"> Protection against virusesk
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>5.</b> What does the term mean "CASB" (Cloud Access Security Broker)?</p>
-                        <label>
-                            <input type="radio" name="q5" value="a"> Controlling access to cloud resources
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Licences for cloud services
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Monitoring network traffic
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Selling cloud workloads
-                        </label><br>
-                    </div>
-
-                    <br><br>
-                    <input id="check-results" data-testid="5" type="button" value="Check your answers" onclick="checkAnswers()">
-                </form>
-
-                <div id="resultMessage"></div>
+        <section>
+            <div class="row">
+                <h1 class="title">Test 5. Protecting information</h1>
+                <div id="quizContainer">
+    
+                    <form id="quizForm">
+                        <div class="question">
+                            <p><b>1.</b> What are the main types of information defined by their legal regime in the text?</p>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Trade secrets
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="a"> Confidential information and sensitive information
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Public information and commercial information
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Proprietary information and professional secrets
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><b>2.</b> What security services do cybersecurity vendors provide?</p>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Sale of computers
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="a"> Protection against malware
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Software production
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Computer repair
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><b>3.</b> What an identity and access management system includes (IAM)?</p>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Identity synchronisation
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Resource management
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Tracking network traffic
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="a"> All answers are correct
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><b>4.</b> What is the function of a firewall in cybersecurity?</p>
+                            <label>
+                                <input type="radio" name="q4" value="b"> Data encryption protection
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="a"> Monitoring network traffic
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> Identity management
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> Protection against virusesk
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><b>5.</b> What does the term mean "CASB" (Cloud Access Security Broker)?</p>
+                            <label>
+                                <input type="radio" name="q5" value="a"> Controlling access to cloud resources
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Licences for cloud services
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Monitoring network traffic
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Selling cloud workloads
+                            </label><br>
+                        </div>
+    
+                        <br><br>
+                        <input id="check-results" data-testid="5" class="button" type="button" value="Check your answers" onclick="checkAnswers()">
+                    </form>
+    
+                    <div id="resultMessage"></div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <div class="button_row">
             <div class="button_wrap">

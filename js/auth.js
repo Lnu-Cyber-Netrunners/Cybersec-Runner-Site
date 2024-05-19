@@ -15,16 +15,28 @@ if (currentUser) {
 }
 
 onAuthStateChanged(auth, (user) => {
+    const activeLink = document.querySelector('.lang .link.active');
     if (user) {
         console.log(window.user, user.uid);
         if (window.user != user.uid) {
             window.user = user.uid;
             // window.location.href = "/index.html";    
             console.log("user is logged in");
+            if (activeLink && activeLink.textContent.trim() === 'UA') {
+                document.getElementById('menu__item-results').href = '../../pages/ukr/results.html';
+            } else {
+                document.getElementById('menu__item-results').href = '../../pages/eng/results.eng.html';
+            }
         }
     } else {
         if (window.user !== null) {
             window.user = null;
+        }
+        console.log("user is logged in");
+        if (activeLink && activeLink.textContent.trim() === 'UA') {
+            document.getElementById('menu__item-results').href = '../../pages/ukr/results_not_registered.html';
+        } else {
+            document.getElementById('menu__item-results').href = '../../pages/eng/results_not_registered.html';
         }
     }
     showAuthControls();
@@ -55,5 +67,7 @@ document.getElementById('sign-out').addEventListener('click', () => {
         console.log('Error signing out');
       });
 });
+
+
 
 showAuthControls();

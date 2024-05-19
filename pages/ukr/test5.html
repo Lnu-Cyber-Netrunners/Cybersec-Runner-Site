@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест 5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/tests_styles.css">
 </head>
 
@@ -19,7 +22,7 @@
                   <li><a class="menu__item" href="../../index.html">Головна</a></li>
                   <li><a class="menu__item" href="../../pages/ukr/page2.html">Теорія та тести</a></li>
                   <li><a class="menu__item" href="../../pages/ukr/vm_page.html">Віртуальна машина</a></li>                
-                  <li><a class="menu__item" href="../../pages/ukr/results.html">Для користувача</a></li>
+                  <li><a class="menu__item" id="menu__item-results" href="../../pages/ukr/results.html">Для користувача</a></li>
                 </ul>
             </div>
             <div class="button_wrap1">    
@@ -40,98 +43,100 @@
             <div class="text-overlay">Тест 5</div>
         </div>
 
-        <div class="row">
-            <h1 class="title">Тест 5. Захист інфомації</h1>
-            <div id="quizContainer">
-
-                <form id="quizForm">
-                    <div class="question">
-                        <p><b>1.</b> Які основні види інформації визначаються за своїм правовим режимом у тексті?</p>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Комерційна таємниця
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="a"> Конфіденційна інформація та таємна інформація
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Відкрита інформація та комерційна інформація
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Службова інформація та професійна таємниця
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>2.</b> Які послуги з безпеки надають постачальники у сфері кібербезпеки?</p>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Продаж комп'ютерів
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="a"> Захист від шкідливих програм
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Виробництво програмного забезпечення
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Ремонт комп'ютерів
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>3.</b> Що включає в себе система управління ідентифікацією та доступом (IAM)?</p>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Синхронізація ідентифікації
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Управління ресурсами
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Відстеження мережевого трафіку
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="a"> Всі відповіді вірні
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>4.</b> Яка функція виконує брандмауер у сфері кібербезпеки?</p>
-                        <label>
-                            <input type="radio" name="q4" value="b"> Захист від шифрування даних
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="a"> Контроль мережевого трафіку
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="b"> Управління ідентифікацією
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="b"> Захист від вірусів
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>5.</b> Що означає термін "CASB" (Cloud Access Security Broker)?</p>
-                        <label>
-                            <input type="radio" name="q5" value="a"> Контроль доступу до хмарних ресурсів
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Ліцензії на хмарні сервіси
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Контроль мережевого трафіку
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Продаж хмарних робочих навантажень
-                        </label><br>
-                    </div>
-
-                    <br><br>
-                    <input id="check-results" data-testid="5" type="button" value="Перевірити відповіді" onclick="checkAnswers()">
-                </form>
-
-                <div id="resultMessage"></div>
+        <section>
+            <div class="row">
+                <h1 class="title">Тест 5. Захист інфомації</h1>
+                <div id="quizContainer">
+    
+                    <form id="quizForm">
+                        <div class="question">
+                            <p><strong>1. Які основні види інформації визначаються за своїм правовим режимом у тексті?</strong></p>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Комерційна таємниця
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="a"> Конфіденційна інформація та таємна інформація
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Відкрита інформація та комерційна інформація
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Службова інформація та професійна таємниця
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><strong>2. Які послуги з безпеки надають постачальники у сфері кібербезпеки?</strong></p>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Продаж комп'ютерів
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="a"> Захист від шкідливих програм
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Виробництво програмного забезпечення
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Ремонт комп'ютерів
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><strong>3. Що включає в себе система управління ідентифікацією та доступом (IAM)?</strong></p>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Синхронізація ідентифікації
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Управління ресурсами
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Відстеження мережевого трафіку
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="a"> Всі відповіді вірні
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><strong>4. Яка функція виконує брандмауер у сфері кібербезпеки?</strong></p>
+                            <label>
+                                <input type="radio" name="q4" value="b"> Захист від шифрування даних
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="a"> Контроль мережевого трафіку
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> Управління ідентифікацією
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> Захист від вірусів
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><strong>5. Що означає термін "CASB" (Cloud Access Security Broker)?</strong></p>
+                            <label>
+                                <input type="radio" name="q5" value="a"> Контроль доступу до хмарних ресурсів
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Ліцензії на хмарні сервіси
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Контроль мережевого трафіку
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Продаж хмарних робочих навантажень
+                            </label><br>
+                        </div>
+    
+                        <br><br>
+                        <input id="check-results" data-testid="5" class="button" type="button" value="Перевірити відповіді" onclick="checkAnswers()">
+                    </form>
+    
+                    <div id="resultMessage"></div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <div class="button_row">
             <div class="button_wrap">
