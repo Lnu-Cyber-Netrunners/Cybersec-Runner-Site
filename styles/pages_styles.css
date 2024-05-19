@@ -3,6 +3,8 @@ body{
     min-width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    font-family: "Alegreya", serif;
+    font-size: 18px;
 }
 
 .header{
@@ -10,8 +12,7 @@ body{
 }
 
 .header .container{
-    padding-top: 0.5%;
-    padding-right: 20px;
+    padding: 0.5% 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +26,7 @@ body{
     display: flex; 
     align-items: center;
     position: fixed;
-    top: 0px;
+    top: 10px;
     left: 20px;
     width: 26px;
     height: 26px;
@@ -123,6 +124,7 @@ body{
     text-decoration: none;
     border: 1px solid rgb(0, 0, 0);
     transition: all .4s;
+    margin-left: 5px;
 }
 
 .button_wrap1 .button:hover {

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/tests_styles.css">
 </head>
 
@@ -19,7 +22,7 @@
                   <li><a class="menu__item" href="../../index.html">Головна</a></li>
                   <li><a class="menu__item" href="../../pages/ukr/page2.html">Теорія та тести</a></li>
                   <li><a class="menu__item" href="../../pages/ukr/vm_page.html">Віртуальна машина</a></li>                
-                  <li><a class="menu__item" href="../../pages/ukr/results.html">Для користувача</a></li>
+                  <li><a class="menu__item" id="menu__item-results" href="../../pages/ukr/results.html">Для користувача</a></li>
                 </ul>
             </div>
             <div class="button_wrap1">    
@@ -40,98 +43,100 @@
             <div class="text-overlay">Тест 3</div>
         </div>
 
-        <div class="row">
-            <h1 class="title">Тест 3. Шифрування в кібербезпеці</h1>
-            <div id="quizContainer">
-
-                <form id="quizForm">
-                    <div class="question">
-                        <p><b>1.</b> Що представляє собою шифрування в кібербезпеці?</p>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Змінення фізичних властивостей даних
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="a"> Перетворення даних з читабельного формату в закодований
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Копіювання даних для збереження
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Випадкова генерація нових даних
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>2.</b> Яким чином працює шифрування в кібербезпеці?</p>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Шифрування використовується для створення ідентифікаторів користувачів
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="a"> Дані змінюються так, щоб виглядати випадковими, і використовується ключ для розшифрування
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Всі дані автоматично перетворюються в шифрований текст
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Ключі використовуються лише для зберігання даних
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>3.</b> Що таке асиметричне шифрування?</p>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Шифрування, де використовується лише один ключ
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Шифрування з відкритим ключем
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="a"> Шифрування, де використовуються два різні ключі для шифрування та розшифрування
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Шифрування, що використовує квантові принципи
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>4.</b> Які алгоритми відносяться до симетричного шифрування?</p>
-                        <label>
-                            <input type="radio" name="q4" value="b"> RSA та Інфраструктура відкритих ключів (PKI)
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="a"> DES, Triple DES та AES
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="b"> RSA та Twofish
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="b"> Інфраструктура відкритих ключів (PKI) та AES
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>5.</b> Які принципи квантової механіки використовуються в квантовій криптографії?</p>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Зміна фізичних властивостей частинок
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Повне клонування квантових систем
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="a"> Незмінність квантової системи під час вимірювання
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Невизначеність і вимірювання частинок
-                        </label><br>
-                    </div>
-
-                    <br><br>
-                    <input id="check-results" data-testid="3" type="button" value="Перевірити відповіді" onclick="checkAnswers()">
-                </form>
-
-                <div id="resultMessage"></div>
+        <section>
+            <div class="row">
+                <h1 class="title">Тест 3. Шифрування в кібербезпеці</h1>
+                <div id="quizContainer">
+    
+                    <form id="quizForm">
+                        <div class="question">
+                            <p><strong>1. Що представляє собою шифрування в кібербезпеці?</strong></p>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Змінення фізичних властивостей даних
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="a"> Перетворення даних з читабельного формату в закодований
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Копіювання даних для збереження
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Випадкова генерація нових даних
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><strong>2. Яким чином працює шифрування в кібербезпеці?</strong></p>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Шифрування використовується для створення ідентифікаторів користувачів
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="a"> Дані змінюються так, щоб виглядати випадковими, і використовується ключ для розшифрування
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Всі дані автоматично перетворюються в шифрований текст
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Ключі використовуються лише для зберігання даних
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><strong>3. Що таке асиметричне шифрування?</strong></p>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Шифрування, де використовується лише один ключ
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Шифрування з відкритим ключем
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="a"> Шифрування, де використовуються два різні ключі для шифрування та розшифрування
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Шифрування, що використовує квантові принципи
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><strong>4. Які алгоритми відносяться до симетричного шифрування?</strong></p>
+                            <label>
+                                <input type="radio" name="q4" value="b"> RSA та Інфраструктура відкритих ключів (PKI)
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="a"> DES, Triple DES та AES
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> RSA та Twofish
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> Інфраструктура відкритих ключів (PKI) та AES
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><strong>5. Які принципи квантової механіки використовуються в квантовій криптографії?</strong></p>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Зміна фізичних властивостей частинок
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Повне клонування квантових систем
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="a"> Незмінність квантової системи під час вимірювання
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Невизначеність і вимірювання частинок
+                            </label><br>
+                        </div>
+    
+                        <br><br>
+                        <input id="check-results" data-testid="3" class="button" type="button" value="Перевірити відповіді" onclick="checkAnswers()">
+                    </form>
+    
+                    <div id="resultMessage"></div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <div class="button_row">
             <div class="button_wrap">

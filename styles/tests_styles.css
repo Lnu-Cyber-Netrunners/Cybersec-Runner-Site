@@ -3,6 +3,8 @@
     min-width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    font-family: "Alegreya", serif;
+    font-size: 18px;
 }
 
 .header {
@@ -10,8 +12,7 @@
 }
 
 .header .container {
-    padding-top: 0.5%;
-    padding-right: 20px;
+    padding: 0.5% 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +26,7 @@
     display: flex;
     align-items: center;
     position: fixed;
-    top: 0px;
+    top: 10px;
     left: 20px;
     width: 26px;
     height: 26px;
@@ -133,11 +134,17 @@
     text-decoration: none;
     border: 1px solid rgb(0, 0, 0);
     transition: all .4s;
+    margin-left: 5px;
 }
 
 .button_wrap1 .button:hover {
     color: rgb(0, 0, 0);
     background-color: transparent;
+}
+
+.lang{
+    display: flex;
+    margin-left: 5px;
 }
 
 .lang .link {
@@ -178,7 +185,7 @@
 .text-overlay {
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 8%;
     transform: translate(0, -50%);
     color: white;
     font-size: 60px;
@@ -208,6 +215,14 @@
 
 .main {
     position: relative;
+}
+
+section{
+    padding: 0 20px;
+}
+
+#resultMessage{
+    margin-top: 15px;
 }
 
 .row {
@@ -303,7 +318,7 @@
     margin-bottom: 50px;
 }
 
-.button_wrap .button {
+.button{
     background-color: rgb(0, 0, 0);
     border-radius: 10px;
     display: inline-block;
@@ -315,9 +330,10 @@
     text-decoration: none;
     border: 1px solid rgb(0, 0, 0);
     transition: all .4s;
+    font-family: "Alegreya", serif;
 }
 
-.button_wrap .button:hover {
+.button:hover {
     color: rgb(0, 0, 0);
     background-color: transparent;
 }
@@ -349,6 +365,16 @@
 
 }
 
+.question p{
+    font-size: 22px;
+}
+
+.question label{
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 1.1;
+}
+
 .correct {
     background-color: #8dff7e;
 }
@@ -367,6 +393,19 @@
     border: none;
     margin: 100px auto;
     padding: 0 20px;
+}
+
+.row.not-registered{
+    max-width: 800px;
+    border-radius: 0;
+    border: none;
+    margin: 100px auto;
+    padding: 0 20px;
+}
+
+.row.not-registered h1{
+    text-align: cente
+    ;
 }
 
 .test-list{

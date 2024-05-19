@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test 3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/tests_styles.css">
 </head>
 
@@ -19,7 +22,7 @@
                     <li><a class="menu__item" href="../../pages/eng/MainPage.eng.html">Main</a></li>
                     <li><a class="menu__item" href="../../pages/eng/page2.eng.html">Theory and tests</a></li>
                     <li><a class="menu__item" href="#">Virtual machine</a></li>
-                    <li><a class="menu__item" href="../../pages/eng/results.eng.html">For User</a></li>
+                    <li><a class="menu__item" id="menu__item-results" href="../../pages/eng/results.eng.html">For User</a></li>
                 </ul>
             </div>
             <div class="button_wrap1">    
@@ -40,98 +43,100 @@
             <div class="text-overlay">Теst 3</div>
         </div>
 
-        <div class="row">
-            <h1 class="title">Test 3. Encryption in cybersecurity</h1>
-            <div id="quizContainer">
-
-                <form id="quizForm">
-                    <div class="question">
-                        <p><b>1.</b> What is encryption in cybersecurity?</p>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Changing the physical properties of data
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="a"> Converting data from a readable format to an encoded format
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Copy data for safekeeping
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q1" value="b"> Random generation of new data
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>2.</b> How does encryption work in cybersecurity?</p>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Encryption is used to create user IDs
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="a"> The data is changed to look random and a key is used to decrypt it
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="b"> All data is automatically converted to encrypted text
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q2" value="b"> Keys are used for data storage only
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>3.</b> What is asymmetric encryption?</p>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Encryption where only one key is used
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Public key encryption
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="a"> Encryption, where two different keys are used for encryption and decryption
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q3" value="b"> Encryption using quantum principles
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>4.</b> What algorithms belong to symmetric encryption?</p>
-                        <label>
-                            <input type="radio" name="q4" value="b"> RSA and Public Key Infrastructure (PKI)
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="a"> DES, Triple DES and AES
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="b"> RSA and Twofish
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q4" value="b"> Public key infrastructureв (PKI) and AES
-                        </label><br>
-                    </div>
-
-                    <div class="question">
-                        <p><b>5.</b> What principles of quantum mechanics are used in quantum cryptography?</p>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Changes in the physical properties of particles
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Complete cloning of quantum systems
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="a"> Invariability of the quantum system during measurement
-                        </label><br>
-                        <label>
-                            <input type="radio" name="q5" value="b"> Uncertainty and particle measurement
-                        </label><br>
-                    </div>
-
-                    <br><br>
-                    <input id="check-results" data-testid="3" type="button" value="Check your answers" onclick="checkAnswers()">
-                </form>
-
-                <div id="resultMessage"></div>
+        <select>
+            <div class="row">
+                <h1 class="title">Test 3. Encryption in cybersecurity</h1>
+                <div id="quizContainer">
+    
+                    <form id="quizForm">
+                        <div class="question">
+                            <p><b>1.</b> What is encryption in cybersecurity?</p>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Changing the physical properties of data
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="a"> Converting data from a readable format to an encoded format
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Copy data for safekeeping
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q1" value="b"> Random generation of new data
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><b>2.</b> How does encryption work in cybersecurity?</p>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Encryption is used to create user IDs
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="a"> The data is changed to look random and a key is used to decrypt it
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> All data is automatically converted to encrypted text
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q2" value="b"> Keys are used for data storage only
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><b>3.</b> What is asymmetric encryption?</p>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Encryption where only one key is used
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Public key encryption
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="a"> Encryption, where two different keys are used for encryption and decryption
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q3" value="b"> Encryption using quantum principles
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><b>4.</b> What algorithms belong to symmetric encryption?</p>
+                            <label>
+                                <input type="radio" name="q4" value="b"> RSA and Public Key Infrastructure (PKI)
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="a"> DES, Triple DES and AES
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> RSA and Twofish
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q4" value="b"> Public key infrastructureв (PKI) and AES
+                            </label><br>
+                        </div>
+    
+                        <div class="question">
+                            <p><b>5.</b> What principles of quantum mechanics are used in quantum cryptography?</p>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Changes in the physical properties of particles
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Complete cloning of quantum systems
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="a"> Invariability of the quantum system during measurement
+                            </label><br>
+                            <label>
+                                <input type="radio" name="q5" value="b"> Uncertainty and particle measurement
+                            </label><br>
+                        </div>
+    
+                        <br><br>
+                        <input id="check-results" data-testid="3" type="button" value="Check your answers" onclick="checkAnswers()">
+                    </form>
+    
+                    <div id="resultMessage"></div>
+                </div>
             </div>
-        </div>
+        </select>
 
 
         <div class="button_row">
